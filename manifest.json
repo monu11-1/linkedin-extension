@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn Helper",
+    "version": "1.0",
+    "description": "An extension to enhance LinkedIn job tracking.",
+    "permissions": ["activeTab", "storage", "scripting"],
+    "host_permissions": ["https://www.linkedin.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.linkedin.com/*"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ]
+  }
+  
